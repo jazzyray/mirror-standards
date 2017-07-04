@@ -38,7 +38,6 @@ NOTE: The content here must reflect the message body text response from the {ser
 | Description       | API/Service description goes here                  |                                     
 | Entry Point URL.  | http://{env}.subdomain.domain/service-context      |
 
-
 <a name="context_diagram"></a>
 ### Optional Context Diagram 
 {optional context diagram of the service and its immediate dependencies goes here}
