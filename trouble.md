@@ -29,7 +29,7 @@ This document intends to help, users, developers and testers when troubleshootin
 
 <a name="service_overview"></a>
 ## {Service_Name} Service Overview
-{A short description of the service and its context within the overall system architecture goes here}
+{A short description of the service and its context within the overall system architecture goes here. It must mention and describe all its dependencies and nothing more.}
 
 NOTE: The content here must reflect the message body text response from the {service_name} /about endpoint.
 
@@ -41,7 +41,7 @@ NOTE: The content here must reflect the message body text response from the {ser
 
 <a name="context_diagram"></a>
 ### Optional Context Diagram 
-{optional context diagram of the service and its dependencies goes here}
+{optional context diagram of the service and its immediate dependencies goes here}
 {The included image should be published as a jpeg/png}
 
 Must be included if the service has any out of process dependencies.
