@@ -136,7 +136,8 @@ Spec for /about here (@TODO)
 ```
 {
   "build.date": "2016-01-19 08:30",
-  "description": "the about description should reflect the service overview section of this document", 
+  "description": "the about description should reflect the service overview section of this document",
+  "trouble": "<URL to trouble.md>", 
   "version": "1.0.5"
 }
 ```
