@@ -153,9 +153,11 @@ This document should be referenced directly from appropriate erroneous HTTP stat
 # Prerequisites
 Users, developers and testers who wish to effectively troubleshoot the {service_name} service must be at least moderately experienced with the following:
 
-* list
-* goes
-* here
+e.g
+
+* Experience and understanding of REST curl/postman
+* Basic shell experience Bash 
+* etc..
 
 <a name="resolve"></a>
 # Resolving Known Error Conditions
