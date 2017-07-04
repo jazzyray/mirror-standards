@@ -114,7 +114,8 @@ This endpoint is intended to be used to make routing decisions and provide opera
 | GET               | /__gtg       |: application/json | 200                    |
 
 #### Good to go Response
-The resultant JSON must include status for all out of process service dependencies including:
+The resultant JSON must include an aggregated status for all out of process service dependencies.
+OK only when all health checks are 200.
 
 ```
 {
