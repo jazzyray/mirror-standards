@@ -1,6 +1,6 @@
 # Service Health Standard
 
-Synopsis: Ontotext DSP services must provide a standard health checking mechanism. All RESTful services must provide a /health endpoint. The endpoint will enable clients to inspect a running service instance. The /health endpoint is expected to aggregate health from all external dependencies. The set of checks must provide a client with enough information to determine if the service instance is able to handle requests. Error conditions should be linked to troubleshooting/run-book mitigation documentation. 
+Synopsis: Ontotext DSP services must provide a standard health checking mechanism. All RESTful services must provide a /health endpoint. The endpoint will enable clients to inspect a running service instance. The /health endpoint is expected to aggregate health from all external dependencies. The set of checks must provide a client with enough information to determine if the service instance is able to handle requests. Error conditions should be linked to [troubleshooting](trouble.md) mitigation documentation. 
 
 # Table of Contents
 
@@ -37,7 +37,7 @@ The /health endpoint must return application/json for a successful health check.
 ```
 {
 	"status": "OK|ERROR",
-	"health-checks": [{
+	"healthChecks": [{
 		"status": "OK|ERROR",
 		"severity": "The severity level of the health check if it is in ERROR state. Must be one of 1 (high), 2 (medium), 3 (low)",
 		"id": "The unique ID of the health check",
@@ -52,7 +52,7 @@ The /health endpoint must return application/json for a successful health check.
 
 Spefic health-checks such as graphdb|elastic will be typed, using "type". The model will be extended to support the health-check in question.
 
-Healthchecks should be pluggable and reusable across services. So a ElasticSearch health-check should be re-usable in many services.
+Health checks should be pluggable and reusable across services. So a ElasticSearch health-check should be re-usable in many services.
 
 As an example a minimal /health implementation with an ElasticSearch health-check might look something like the following.
 Each health-check should be configurable. In this case the ElasticSearch health-check is configured to check a number of indices. Checking and supporting inspection of availability, fields, cluster status etc.:

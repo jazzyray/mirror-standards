@@ -92,7 +92,7 @@ The resultant JSON must include status for all out of process service dependenci
 ```
 {
 	"status": "OK|ERROR",
-	"health-checks": [{
+	"healthChecks": [{
 		"status": "OK|ERROR",
 		"severity": "The severity level of the health check if it is in ERROR state. Must be one of 1 (high), 2 (medium), 3 (low)",
 		"id": "The unique ID of the health check",
