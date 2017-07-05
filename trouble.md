@@ -91,13 +91,21 @@ The resultant JSON must include status for all out of process service dependenci
 
 ```
 {
-  "status": "ERROR",
-  "graphdb": "OK",
-  "elastic": "ERROR"
+	"status": "OK|ERROR",
+	"health-checks": [{
+		"status": "OK|ERROR",
+		"severity": "The severity level of the health check if it is in ERROR state. Must be one of 1 (high), 2 (medium), 3 (low)",
+		"id": "The unique ID of the health check",
+		"name": "The name of the health check",
+		"type": "The type of the check. service|graphdb|elastic|jms|cpu|disk-space|memory|network etc... Where each type will have additional properties.",
+		"impact": "The impact of the health check",
+		"troubleshooting": "The URL#fragment to trouble.md mitigation steps",
+		"description": "What is the healthcheck doing"
+	}]
 }
 ```
 
-Spec for /health here (@TODO)
+Spec for /health [here](health.md)
 
 <a name="gtg"></a>
 #### Good To Go endpoint
