@@ -94,3 +94,13 @@ The /health endpoint must adhere to the following basic RESTful standard:
 
 The response body must follow that described in [model](#model)
 
+# Sticky support
+
+A healthcheck may need to be marked as 'sticky' with a configurable sticky timout. 
+
+By setting a 'sticky' timeout configuration value. This lets the healthcheck know that if the healthcheck ever fails, it should stay failed for the 'timeout' period rather than healing as normal. This ensures that flapping does not occur. Flapping can effect client services. When a service health status announces status as "OK" and "ERROR" is quick succession routing and client errors may occur.
+
+Infintite stickyness should be configurable.
+
+
+
