@@ -55,7 +55,7 @@ Spefic health-checks such as graphdb|elastic will be typed, using "type". The mo
 Healthchecks should be pluggable and reusable across services. So a ElasticSearch health-check should be re-usable in many services.
 
 As an example a minimal /health implementation with an ElasticSearch health-check might look something like the following.
-Each health-check should be configurable. In this case the ElasticSearch index is configured to check a number of indices. Checking and supporting inspection of availability, fields, cluster status etc.:
+Each health-check should be configurable. In this case the ElasticSearch health-check is configured to check a number of indices. Checking and supporting inspection of availability, fields, cluster status etc.:
 
 ```
 {
