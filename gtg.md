@@ -19,7 +19,8 @@ It is expected that this service uses cached health-check status by default. Inv
 <a name="model"></a>
 # Model
 
-{ "gtg": "OK|UNAVAILABLE" }
+{ "gtg": "OK|UNAVAILABLE",
+  "message": "see status code below for text" }
 
 <a name="rest_spec"></a>
 # REST Specification
@@ -37,3 +38,21 @@ The response body must follow that described in [model](#model)
 cache: flag which indicates to use cached health check results (default is true). This is useful directly after deployment and forcing health refresh. 
 
 E.g. /__gtg?cache=false will force a re-run off all the services health checks.
+
+## Status Codes
+
+### 200 - OK
+
+The service is good to go and healthy.
+
+### 503 - Service Unavailble
+
+The service is currently unhealthy. It is unable to handle requests due to a service or service dependency which is in ERROR state. Please refer to the /health endpoint.
+
+## Response Headers
+
+#### Link
+When the service is unhealthy a Link header should be included pointing to /health. the response
+
+```
+Link: </health>; rel=meta
