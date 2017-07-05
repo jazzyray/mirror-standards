@@ -50,6 +50,8 @@ The /health endpoint must return application/json for a successful health check.
 } 
 ```
 
+Spefic health-checks such as graphdb|elastic will be typed, using "type". The model will be extended to support the health-check in question.
+
 Healthchecks should be pluggable and reusable across services. So a ElasticSearch health-check should be re-usable in many services.
 
 As an example a minimal /health implementation with an ElasticSearch health-check might look something like the following.
