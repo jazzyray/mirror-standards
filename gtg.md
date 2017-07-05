@@ -10,11 +10,11 @@ Synopsis: Ontotext DSP services must provide a standard operation health status 
 
 <a name="introduction"></a>
 # Introduction
-The /__gtg endpoint is used to check the operational status of a service. The service returns a 200 for an operational service instance and a 503 "Service unavailible" for a service instance which should be taken out of service. This endpoint should be used for routing at proxy layers such as application load balancers and health status checking alerting.
+The /__gtg endpoint is used to check the operational status of a service. The service returns a 200 for an operational service instance and a 503 "Service unavailable" for a service instance which should be taken out of service. This endpoint should be used for routing at proxy layers such as application load balancers and health status checking alerting.
 
 If any health-check status is in ERROR status the /__gtg endpoint must respond with a 503.
 
-It is expected that this service uses cached health-check status by default. Invoking all health checks would be a performance overhead which is normally unacceptble.
+It is expected that this service uses cached health-check status by default. Invoking all health checks would be a performance overhead which is normally unacceptable.
 
 <a name="model"></a>
 # Model
