@@ -60,7 +60,7 @@ Each health-check should be configurable. In this case the ElasticSearch health-
 ```
 {
 	"status": "OK",
-	"health-checks": [{
+	"healthChecks": [{
 		"status": "OK",
 		"id": "12345",
 		"name": "search-api-elastic-index-health-check",
