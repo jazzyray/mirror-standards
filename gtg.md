@@ -1,6 +1,6 @@
-# Good to Go Standard
+# Good to Go Service Standard
 
-Synopsis: Ontotext DSP services must provide a standard operation health status mechanism. All RESTful services must provide a /__gtg endpoint. The endpoint will enable client to inspect the operational health of the service instance. The /__gtg endpoint is expected to return a simple status only and not provide information of dependent service status. The /health endpoint should be used to inspect the aggregate health from all external dependencies.
+Synopsis: Ontotext DSP services must provide a standard operational health status mechanism. All RESTful services must provide a /__gtg endpoint. The endpoint will enable client to inspect the operational health of the service instance. The /__gtg endpoint is expected to return a simple status only and not provide information of dependent service status. The [/health](health.md) endpoint should be used to inspect the aggregate health from all external dependencies.
 
 # Table of Contents
 
@@ -20,7 +20,7 @@ It is expected that this service uses cached health-check status by default. Inv
 # Model
 
 { "gtg": "OK|UNAVAILABLE",
-  "message": "see status code below for text" }
+  "message": "{replase with status code text. See status code below}" }
 
 <a name="rest_spec"></a>
 # REST Specification
@@ -47,7 +47,7 @@ The service is good to go and healthy.
 
 ### 503 - Service Unavailble
 
-The service is currently unhealthy. It is unable to handle requests due to a service or service dependency which is in ERROR state. Please refer to the /health endpoint.
+The service is currently unhealthy. It is unable to handle requests due to a service or service dependency which is in ERROR state. Please refer to the [/health](health.md) endpoint.
 
 ## Response Headers
 

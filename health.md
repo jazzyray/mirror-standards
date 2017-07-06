@@ -11,7 +11,7 @@ Synopsis: Ontotext DSP services must provide a standard health checking mechanis
 <a name="introduction"></a>
 # Introduction
 
-The /health endpoint is used to check the health/status of the running application. It provides clients with operational information. Health information and links to mitigation steps should be used to restore service. /health should not be used by monitoring software to check if the service is operational. The /__gtg endpoint documented here should provide service availability status.
+The /health endpoint is used to check the health/status of the running application. It provides clients with operational information. Health information and links to mitigation steps should be used to restore service. /health should not be used by monitoring software to check if the service is operational. The [/__gtg](gtg.md) endpoint documented here should provide service availability status.
 
 The /health endpoint must aggregate the health of all its dependencies and provide a service instance level health status.
 
