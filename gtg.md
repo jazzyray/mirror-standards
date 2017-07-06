@@ -1,4 +1,4 @@
-# Good to Go Health Standard
+# Good to Go Standard
 
 Synopsis: Ontotext DSP services must provide a standard operation health status mechanism. All RESTful services must provide a /__gtg endpoint. The endpoint will enable client to inspect the operational health of the service instance. The /__gtg endpoint is expected to return a simple status only and not provide information of dependent service status. The /health endpoint should be used to inspect the aggregate health from all external dependencies.
 
