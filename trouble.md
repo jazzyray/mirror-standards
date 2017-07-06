@@ -73,14 +73,14 @@ Spec for /endpoint/x here {[link]}
 {Description of the response goes here}
 
 <a name="health"></a>
-#### Health endpoint
-{This section must describe the /health endpoint its output and the values contained therein}
+#### [Health](health.md) endpoint
+{This section must describe the [/health](health.md) endpoint its output and the values contained therein}
 
-Returns JSON data summarising the current health status of the application. The status code must always be a 200 unless the /health endpoint itself is in error. 
+Returns JSON data summarising the current health status of the application. The status code must always be a 200 unless the [/health](health.md) endpoint itself is in error. 
 
-| Verb              | URL template | Mime Type         | Supported Status Codes |
-|:----------------- |:-------------|:------------------|:----------------------:|
-| GET               | /health      |: application/json | 200                    |
+| Verb              | URL template            | Mime Type         | Supported Status Codes |
+|:----------------- |:------------------------|:------------------|:----------------------:|
+| GET               | [/health](health.md)    |: application/json | 200                    |
 
 #### Healthy Response
 The resultant JSON must include status for all out of process service dependencies including:
@@ -91,30 +91,39 @@ The resultant JSON must include status for all out of process service dependenci
 
 ```
 {
-  "status": "ERROR",
-  "graphdb": "OK",
-  "elastic": "ERROR"
+	"status": "OK|ERROR",
+	"healthChecks": [{
+		"status": "OK|ERROR",
+		"severity": "The severity level of the health check if it is in ERROR state. Must be one of 1 (high), 2 (medium), 3 (low)",
+		"id": "The unique ID of the health check",
+		"name": "The name of the health check",
+		"type": "The type of the check. service|graphdb|elastic|jms|cpu|disk-space|memory|network etc... Where each type will have additional properties.",
+		"impact": "The impact of the health check",
+		"troubleshooting": "The URL#fragment to trouble.md mitigation steps",
+		"description": "What is the healthcheck doing"
+	}]
 }
 ```
 
-Spec for /health here (@TODO)
+Spec for /health [here](health.md)
 
 <a name="gtg"></a>
-#### Good To Go endpoint
-{This section must describe the /__gtg endpoint its outputs and the values contained therein}
+#### [Good To Go](gtg.md) endpoint
+{This section must describe the [/__gtg](gtg.md) endpoint its outputs and the values contained therein}
 
-The /__gtg endpoint should be based on the health check status results. One or more errors imply that the service is not good to go.
+The [/__gtg](gtg.md) endpoint should be based on the health check status results. One or more errors imply that the service is not good to go.
 
 The endpoint emits a 200 OK response if the application is considered as healthy, and 503 Service Unavailable if it is unhealthy. 
 
 This endpoint is intended to be used to make routing decisions and provide operations personnel simple access to service availability.
 
-| Verb              | URL template | Mime Type         | Supported Status Codes |
-|:----------------- |:-------------|:------------------|:----------------------:|
-| GET               | /__gtg       |: application/json | 200                    |
+| Verb              | URL template           | Mime Type         | Supported Status Codes |
+|:----------------- |:-----------------------|:------------------|:----------------------:|
+| GET               | [/__gtg](gtg.md)       |: application/json | 200                    |
 
 #### Good to go Response
-The resultant JSON must include status for all out of process service dependencies including:
+The resultant JSON must include an aggregated status for all out of process service dependencies.
+OK only when all health checks are 200.
 
 ```
 {
@@ -122,20 +131,21 @@ The resultant JSON must include status for all out of process service dependenci
 }
 ```
 
-Spec for /__gtg here (@TODO)
+Spec for /__gtg [here](gtg.md)
 
 <a name="about"></a>
-#### About
+#### [About](about.md) endpoint
 Returns JSON data describing the application, providing links to all relevant supporting operational documentation resources including this document.
 
 It must include the running version.
 
-Spec for /about here (@TODO)
+Spec for /about [here](about.md) 
 
 ```
 {
   "build.date": "2016-01-19 08:30",
-  "description": "the about description should reflect the service overview section of this document", 
+  "description": "the about description should reflect the service overview section of this document",
+  "trouble": "<URL to trouble.md>", 
   "version": "1.0.5"
 }
 ```
