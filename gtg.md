@@ -47,7 +47,7 @@ The service is good to go and healthy.
 
 ### 503 - Service Unavailble
 
-The service is currently unhealthy. It is unable to handle requests due to a service or service dependency which is in ERROR state. Please refer to the [/health](health.md) endpoint.
+The service is currently unhealthy. It is unable to handle requests due to a service or service dependency which is in ERROR state. Please refer to the [/\__health](health.md) endpoint.
 
 ## Response Headers
 
