@@ -52,7 +52,7 @@ The service is currently unhealthy. It is unable to handle requests due to a ser
 ## Response Headers
 
 #### Link
-When the service is unhealthy a Link header should be included pointing to /health. the response
+When the service is unhealthy a Link header should be included pointing to /\__health. the response
 
 ```
 Link: </health>; rel=meta

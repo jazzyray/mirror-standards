@@ -1,6 +1,6 @@
 # About Service Standard
 
-Synopsis: Ontotext DSP services must provide a standard operational about mechanism. All RESTful services must provide an /\__about endpoint. The endpoint will enable the client to inspect and understand what features the service instance intends to provide. It also needs to provide links to its troubleshooting guide, build number and running version. The /\__about endpoint is expected to return a 200 OK status only. The complementary [/health](health.md) endpoint should be used to inspect the aggregate health and health of all external dependencies. The [/__gtg](gtg.md) endpoint should be used to check operational status either "Good to Go" or "Service Unavailable".
+Synopsis: Ontotext DSP services must provide a standard operational about mechanism. All RESTful services must provide an /\__about endpoint. The endpoint will enable the client to inspect and understand what features the service instance intends to provide. It also needs to provide links to its troubleshooting guide, build number and running version. The /\__about endpoint is expected to return a 200 OK status only. The complementary [/\__health](health.md) endpoint should be used to inspect the aggregate health and health of all external dependencies. The [/__gtg](gtg.md) endpoint should be used to check operational status either "Good to Go" or "Service Unavailable".
 
 # Table of Contents
 
@@ -26,7 +26,7 @@ It must include the running version.
 
 ```
 {
-  "build.date": "2016-01-19 08:30",
+  "buildDate": "2016-01-19 08:30",
   "description": "The about description should reflect the service overview section of the associated trouble.md document",
   "trouble": "<URL to trouble.md>", 
   "version": "1.0.5"
