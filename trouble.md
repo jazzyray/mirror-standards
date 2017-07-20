@@ -12,6 +12,7 @@ Synopsis: a document describing the steps and processes required to resolve know
 			* [Health](#health)
 			* [Good to Go](#gtg)
 			* [About](#about) 
+			* [Trouble](#trouble) 
 	* [Alive](#alive)
 	* [References](#references) 
 2. [Prerequisites](#prerequisites) 
@@ -74,13 +75,13 @@ Spec for /endpoint/x here {[link]}
 
 <a name="health"></a>
 #### [Health](health.md) endpoint
-{This section must describe the [/health](health.md) endpoint its output and the values contained therein}
+{This section must describe the [/\__health](health.md) endpoint its output and the values contained therein}
 
-Returns JSON data summarising the current health status of the application. The status code must always be a 200 unless the [/health](health.md) endpoint itself is in error. 
+Returns JSON data summarising the current health status of the application. The status code must always be a 200 unless the [/\__health](health.md) endpoint itself is in error. 
 
 | Verb              | URL template            | Mime Type         | Supported Status Codes |
 |:----------------- |:------------------------|:------------------|:----------------------:|
-| GET               | [/health](health.md)    |: application/json | 200                    |
+| GET               | [/\__health](health.md)    |: application/json | 200                    |
 
 #### Healthy Response
 The resultant JSON must include status for all out of process service dependencies including:
@@ -109,9 +110,9 @@ Spec for /health [here](health.md)
 
 <a name="gtg"></a>
 #### [Good To Go](gtg.md) endpoint
-{This section must describe the [/__gtg](gtg.md) endpoint its outputs and the values contained therein}
+{This section must describe the [/\__gtg](gtg.md) endpoint its outputs and the values contained therein}
 
-The [/__gtg](gtg.md) endpoint should be based on the health check status results. One or more errors imply that the service is not good to go.
+The [/\__gtg](gtg.md) endpoint should be based on the health check status results. One or more errors imply that the service is not good to go.
 
 The endpoint emits a 200 OK response if the application is considered as healthy, and 503 Service Unavailable if it is unhealthy. 
 
@@ -119,7 +120,7 @@ This endpoint is intended to be used to make routing decisions and provide opera
 
 | Verb              | URL template           | Mime Type         | Supported Status Codes |
 |:----------------- |:-----------------------|:------------------|:----------------------:|
-| GET               | [/__gtg](gtg.md)       |: application/json | 200                    |
+| GET               | [/\__gtg](gtg.md)       |: application/json | 200                    |
 
 #### Good to go Response
 The resultant JSON must include an aggregated status for all out of process service dependencies.
@@ -131,7 +132,7 @@ OK only when all health checks are 200.
 }
 ```
 
-Spec for /__gtg [here](gtg.md)
+Spec for /\__gtg [here](gtg.md)
 
 <a name="about"></a>
 #### [About](about.md) endpoint
@@ -139,7 +140,7 @@ Returns JSON data describing the application, providing links to all relevant su
 
 It must include the running version.
 
-Spec for /about [here](about.md) 
+Spec for /\__about [here](about.md) 
 
 ```
 {
@@ -149,6 +150,13 @@ Spec for /about [here](about.md)
   "version": "1.0.5"
 }
 ```
+
+
+<a name="trouble"></a>
+#### Trouble endpoint
+Returns an HTML rendering this trouble.md document
+
+
 
 <a name="alive"></a>
 ## Alive
